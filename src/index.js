@@ -1,9 +1,14 @@
 const express = require("express");
 const bp = require('body-parser');
+const cors = require('cors');
 const app = express();
 const fs = require("fs");
 const port = process.env.PORT || 3000;
 const appointments = require('../data/appointments.json');
+
+app.use(cors({
+  origin: '*'
+}));
 
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
