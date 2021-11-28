@@ -13,7 +13,15 @@ app.get('/', function (req, res) {
 });
 
 app.get('/appointments', function (req, res) {
-  res.json(appointments);
+  var obj;
+  fs.readFile('./data/appointments.json', 'utf8', function (err, data) {
+    if (err) {
+      console.log(err);
+      throw err;
+    }
+    obj = JSON.parse(data);
+    res.json(obj);
+  });
 });
 
 // POST method route
