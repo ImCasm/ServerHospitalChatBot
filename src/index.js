@@ -38,7 +38,7 @@ app.post("/save", function (req, res) {
       res.status(400).send("Error saving file");
       return;
     }
-    res.send("saved");
+    res.json({success: true});
   });
 });
 
