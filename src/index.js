@@ -29,7 +29,6 @@ app.get('/appointments', function (req, res) {
   });
 });
 
-// POST method route
 app.post("/save", function (req, res) {
   console.log(req.body);
   saveFile(req.body, function (err) {
